@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-3" href="index">Proyecto Daw</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Principal</div>
+                        <a class="nav-link" href="index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Inicio
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Equipos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="equipos.html">Mantenimiento de equipos</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    Proyecto DAW
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h2 class="mt-4">Editar equipos</h2>
+                    <br>
+                    <br>
+                    <div class="container">
+                        <form id="nuevoEquipo">
+                            <div class="row mb-3">
+                                <input type="hidden" class="form-control" id="id_equipos">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tipo_equipo" class="form-label">Tipo de equipo</label>
+                                    <select class="form-select" id="tipo_equipo">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="descripcion" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcion" rows="3"
+                                        placeholder="Ingrese la descripción"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="marca" class="form-label">Marca</label>
+                                    <select class="form-select" id="marca">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="modelo" class="form-label">Modelo</label>
+                                    <input type="text" class="form-control" id="modelo" placeholder="Ingrese el modelo">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="anio_compra" class="form-label">Año de compra</label>
+                                    <input type="text" class="form-control" id="anio_compra"
+                                        placeholder="Ingrese el año de compra">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="costo" class="form-label">Costo</label>
+                                    <input type="text" class="form-control" id="costo" placeholder="Ingrese el costo">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="vida_util" class="form-label">Vida útil</label>
+                                    <input type="text" class="form-control" id="vida_util"
+                                        placeholder="Ingrese la vida útil">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="estado_equipo" class="form-label">Estado del equipo</label>
+                                    <select class="form-select" id="estado_equipo">
+                                    </select>
+                                </div>
+                                <div class="col-md-6
+                            ">
+                                    <label for="estado" class="form-label">Estado</label>
+                                    <select class="form-select" id="estado">
+                                        <option selected>Seleccione un estado</option>
+                                        <option value="A">Activo</option>
+                                        <option value="I">Inactivo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+
+                        </form>
+
+                    </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Desarrollo de aplicaciones web 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', async (event) => {
+            const form = document.getElementById('nuevoEquipo');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                guardarEquipos();
+
+            });
+
+            await obtenerDatos();
+        });
+        async function guardarEquipos() {
+            
+            const id_equipos = document.querySelector('#id_equipos').value;
+            const nombre = document.querySelector('#nombre').value;
+            const tipoEquipo = document.querySelector('#tipo_equipo').value;
+            const descripcion = document.querySelector('#descripcion').value;
+            const marca = document.querySelector('#marca').value;
+            const modelo = document.querySelector('#modelo').value;
+            const anioCompra = document.querySelector('#anio_compra').value;
+            const costo = document.querySelector('#costo').value;
+            const vidaUtil = document.querySelector('#vida_util').value;
+            const estadoEquipo = document.querySelector('#estado_equipo').value;
+            const estado = document.querySelector('#estado').value;
+
+            // Creamos un objeto con los datos del formulario
+            const datosFormulario = {
+                id_equipos,
+                nombre,
+                tipoEquipo,
+                descripcion,
+                marca,
+                modelo,
+                anioCompra,
+                costo,
+                vidaUtil,
+                estadoEquipo,
+                estado
+            };
+            fetch('./../equipos/editarEquipo', {
+				method: 'POST',
+				body: JSON.stringify(datosFormulario),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+			.then(response => response.json())
+			.then(data => {
+                if (!data.error) {
+                    window.location.href = './../equipos';
+                }else{
+                    alert(data.mensaje)
+                }
+            })
+			.catch(error => console.log(error));
+
+            // const options = {
+            // method: "POST",
+            // headers: {
+            //     "Content-Type": "application/json"
+            // },
+            // body: JSON.stringify(datosFormulario)
+            // };
+            // try {
+            //     const response = await fetch('./../equipos/guardar',options);
+
+            //     if (response.ok) {
+            //         // si la respuesta es exitosa, hacer algo aquí
+            //     } else {
+            //         console.error('Error al enviar los datos del formulario');
+            //     }
+            // } catch (error) {
+            //     console.error('Error en la petición fetch:', error);
+            // }
+
+        }
+        async function obtenerDatos() {
+            await fetch('./../equipos/getTipos')
+                .then((respuesta) => respuesta.json())
+                .then((resultados) => {
+                    let html = "<option selected>Seleccione un tipo de equipo</option>";
+                    resultados.data.forEach((tipo) => {
+                        html += `<option value=${tipo.id_tipo_equipo}>${tipo.descripcion}</option>`;
+                    });
+                    const tipos = document.getElementById('tipo_equipo');
+                    tipos.innerHTML = html;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+
+            await fetch('./../equipos/getMarcas')
+                .then((respuesta) => respuesta.json())
+                .then((resultados) => {
+                    let html = "<option selected>Seleccione una marca</option>";
+                    resultados.data.forEach((tipo) => {
+                        html += `<option value=${tipo.id_marcas}>${tipo.nombre_marca}</option>`;
+                    });
+                    const marca = document.getElementById('marca');
+                    marca.innerHTML = html;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+
+            await fetch('./../equipos/getEstados')
+                .then((respuesta) => respuesta.json())
+                .then((resultados) => {
+                    let html = "<option selected>Seleccione un estado</option>";
+                    resultados.data.forEach((tipo) => {
+                        html += `<option value=${tipo.id_estados_equipo}>${tipo.descripcion}</option>`;
+                    });
+                    const estados = document.getElementById('estado_equipo');
+                    estados.innerHTML = html;
+                })
+                .catch((error) => {
+                    console.log(error);
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            await fetch(`./../equipos/getEquipo/${id}`)
+                .then((respuesta) => respuesta.json())
+                .then((resultados) => {
+                    resultados=resultados.data[0];
+                    document.getElementById('id_equipos').value = resultados.id_equipos;
+                    document.getElementById('nombre').value = resultados.nombre;
+                    document.getElementById('descripcion').value = resultados.descripcion;
+                    document.getElementById('tipo_equipo').value = resultados.tipo_equipo_id;
+                    document.getElementById('marca').value = resultados.marca_id;
+                    document.getElementById('modelo').value = resultados.modelo;
+                    document.getElementById('vida_util').value = resultados.vida_util;
+                    document.getElementById('estado').value = resultados.estado;
+                    document.getElementById('anio_compra').value = resultados.anio_compra;
+                    document.getElementById('costo').value = resultados.costo;
+                    document.getElementById('estado_equipo').value = resultados.estado_equipo_id;
+                    document.getElementById('estado').value = resultados.estado;
+                })
+                .catch((error) => {
+                    console.log(error);
+            });
+
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <!-- <script src="js/datatables-simple-demo.js"></script> -->
+</body>
+
+</html>
